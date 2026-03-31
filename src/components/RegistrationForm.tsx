@@ -12,19 +12,17 @@ function RegistrationForm({ onRegister }: Props) {
     
     e.preventDefault();
     
+    const value = inputRef.current?.value;
     
     
-    
-    
-      
+    if (value != null) {
+      onRegister(value);
       if (inputRef.current != null) {
         inputRef.current.value = "";
         inputRef.current.focus();
       }
-      
     }
-    onRegister(inputRef.current?.value);
-  
+  };
 
   return (
     <>
