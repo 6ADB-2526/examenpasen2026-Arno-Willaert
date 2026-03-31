@@ -1,15 +1,18 @@
 import { useRef } from "react";
 
 interface Props {
-  onRegister: (name: string) => void;
+  onRegister: string[]
 }
 
 function RegistrationForm({ onRegister }: Props) {
   const inputRef = useRef<HTMLInputElement>(null);
 
   const handleSubmit = (e: React.SubmitEvent<HTMLFormElement>) => {
+
     e.preventDefault();
+    
     const value = inputRef.current?.value;
+    
     if (value) {
       onRegister(value);
       if (inputRef.current != null) {
