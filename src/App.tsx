@@ -5,7 +5,10 @@ import UserList from "./components/UserList";
 export default function App() {
 const [GeregistreerdePersonen, setGeregistreerdePersonen] = useState(["Karel", "Els", "Piet"]);
 
+  function handleSubmit(){
 
+    setGeregistreerdePersonen({...GeregistreerdePersonen})
+  }
     
   return (
     <>
